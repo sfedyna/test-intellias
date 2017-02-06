@@ -1,69 +1,29 @@
-Symfony Standard Edition
-========================
+Test task for  Intellias
+=======
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+This document contains information on how to download, install, and start
+using this project.
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+ 1) Installing project
+----------------------------------
 
-What's inside?
---------------
+### 1.1) git pull from github //console command
 
-The Symfony Standard Edition is configured with the following defaults:
+### 1.2) Adjust the folder permissions:
 
-  * An AppBundle you can use to start coding;
+    web\uploads - 777
+    var\cache - 777
+    var\logs - 777
 
-  * Twig as the only configured template engine;
+### 1.3) create a database  //mysql
 
-  * Doctrine ORM/DBAL;
+### 1.4) php composer.phar install   //console command
 
-  * Swiftmailer;
+### 1.5) configure app/config/parameters.yml
 
-  * Annotations enabled for everything.
+### 1.6) Create / Update the database
+    php bin/console doctrine:schema:update --force  //console command
 
-It comes pre-configured with the following bundles:
+### 1.7) install assets
+    php bin/console assets:install web  //console command
 
-  * **FrameworkBundle** - The core Symfony framework bundle
-
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
-
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
-
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
-
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
-
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
-
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev/test env) - Adds code generation
-    capabilities
-
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/3.2/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.2/doctrine.html
-[8]:  https://symfony.com/doc/3.2/templating.html
-[9]:  https://symfony.com/doc/3.2/security.html
-[10]: https://symfony.com/doc/3.2/email.html
-[11]: https://symfony.com/doc/3.2/logging.html
-[12]: https://symfony.com/doc/3.2/assetic/asset_management.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
