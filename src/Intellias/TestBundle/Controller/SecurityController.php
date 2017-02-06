@@ -17,14 +17,26 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Security;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
+/**
+ * Security controller.
+ *
+ * @Route("")
+ */
+
 class SecurityController extends Controller
 {
 
+
     /**
-     * @param Request $request
+     * Lists all user entities.
      *
-     * @return Response
+     * @Route("/login", name="login")
+     * @Method("GET")
      */
+
     public function loginAction(Request $request)
     {
         /** @var $session \Symfony\Component\HttpFoundation\Session\Session */
