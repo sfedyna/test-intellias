@@ -1,0 +1,37 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    <div data-role="page">
+        <div data-role="header">
+            <h1>Sign In</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            {% block fos_user_content %}
+                <form action="{{ path("fos_user_security_check") }}" method="post">
+                    <div class="ui-field-contain">
+                        <div class="error"></div>
+                        {% if (app.session.flashbag.peek('status') and  app.session.flashbag.peek('notice') ) %}
+                            <div class="alert alert-{{ app.session.flashbag.get('status')[0] }}" role="alert">
+                                {{ app.session.flashbag.get('notice')[0] }}
+                            </div>
+                        {% endif %}
+                        {% if csrf_token %}
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+                        {% endif %}
+                        {% if error %}
+                            <div class="alert alert-error"
+                                 role="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="_username" class="form-control" required="required"/>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="_password" class="form-control" required="required"/>
+                    </div>
+                    <input type="submit" data-inline="true" value="Log in">
+                </form>
+            {% endblock fos_user_content %}
+        </div><!-- /content -->
+        <div data-role="footer">
+            <h4>© Intellias 2017</h4>
+        </div>
+    </div>
+{% endblock %}

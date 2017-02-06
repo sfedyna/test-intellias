@@ -1,0 +1,10 @@
+intellias_test:
+    resource: "@IntelliasTestBundle/Controller/"
+    type:     annotation
+
+intellias_test_login:
+    path:     /login
+    defaults: { _controller: IntelliasTestBundle:Security:login}
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

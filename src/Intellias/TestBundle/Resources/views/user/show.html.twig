@@ -1,0 +1,12 @@
+{% extends "IntelliasTestBundle::layout.html.twig" %}
+{% block header %}
+    <h1>{{ user.firstName }} {{ user.lastName }}</h1>
+    <a href="{{ path('user_edit', { 'id': user.id }) }}"
+       class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-btn-icon-right ui-icon-edit">Edit</a>
+{% endblock %}
+{% block content %}
+    <h5>{% if user.updated %}Last updated: {{ user.updated|date('Y-m-d H:i:s') }}{% endif %}</td></h5>
+    <p>{{ user.email }}</p>
+    <a href="{{ path('user_index') }}">Back to the list</a>
+{% endblock %}
+

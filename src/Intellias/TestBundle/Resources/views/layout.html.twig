@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    <div data-role="page">
+        {% include 'IntelliasTestBundle:Content:_menu.html.twig' %}
+        <div data-role="header">
+            <a href="#menu" class="ui-btn ui-btn-inline ui-corner-all ui-shadow  ui-btn-icon-left ui-icon-bars">Menu</a>
+            {% block header %} {% endblock %}
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            {% block content %} {% endblock %}
+        </div><!-- /content -->
+        <div data-role="footer">
+            <h4>© Intellias 2017</h4>
+        </div>
+    </div>
+{% endblock %}
