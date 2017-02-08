@@ -52,14 +52,3 @@ var projects = [
         ]
   }
 ];
-
-function loadHTMLFixture() {
-    setFixtures('<div class="conteaner">'
-        +'  <h1>Intellias Test</h1>'
-        +'  <p class="desc">Lorem ipsum</p>'
-        +'  <p id="pMsg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel laoreet velit.  </p>'
-        +'  </div>'
-        +'<div class="fotter">'
-        +'  <span> © Intellias 2017</span>'
-        +'</div>');
-}
